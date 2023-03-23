@@ -9,7 +9,7 @@ const app = express();
 
 const corsConfig = {
   origin:
-    process.env.NODE_ENV === "production" ? ["http://localhost:3000", "https://transcript-chain.vercel.app/"] : ["http://localhost:3000","https://transcript-chain.vercel.app"],
+    process.env.NODE_ENV === "production" ? ["http://localhost:3000/","http://localhost:3000", "https://transcript-chain.vercel.app/"] : ["http://localhost:3000","https://transcript-chain.vercel.app"],
   optionsSuccessStatus: 200,
   credentials: true,
 };
