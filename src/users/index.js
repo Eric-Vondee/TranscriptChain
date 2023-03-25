@@ -50,11 +50,11 @@ router.delete("/:id", async (req, res, next) => {
 
 router.get("/:id", async (req, res, next) => {
   try {
-    const user = await User.record(req.params.id).get();
+    const user = await User.where("walletAddress", "==", req.params.id).get();
     return res.status(200).json({
       statusCode: 200,
       message: "user fetched",
-      data: user.data,
+      data: user.data[0].data,
     });
   } catch (e) {
     res.status(500).json({

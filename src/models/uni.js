@@ -23,10 +23,10 @@ await db.applySchema(`
         email: string;
         accessId: string;
         isVerified: boolean;
-        walletAddress?: string;
+        walletAddress: string;
 
 
-        constructor(id:string, name:string, registrarName:string,vcName: string, year:number, month:number, email:string, accessId:string, isVerified:boolean){
+        constructor(id:string, name:string, registrarName:string,vcName: string, year:number, month:number, email:string, accessId:string, isVerified:boolean, walletAddress:string){
             this.id = id;
             this.name = name;
             this.registrarName = registrarName;
@@ -36,6 +36,7 @@ await db.applySchema(`
             this.email = email;
             this.accessId = accessId;
             this.isVerified = isVerified;
+            this.walletAddress = walletAddress;
         }
 
         @index(id, accessId);
